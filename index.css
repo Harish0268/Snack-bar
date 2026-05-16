@@ -1,0 +1,86 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+
+#toastbox{
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+
+
+.toast{
+    background-color: fff;
+    width: 300px;
+    height: 50px;
+    padding: 16px;
+    margin: 0 0 10px;
+    border-radius: 12px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    overflow: hidden;
+    transform: translateX(100%);
+    animation: moveleft .5s linear forwards;
+}
+
+@keyframes moveleft {
+
+    100%{
+        transform: translateX(0);
+    }
+    
+}
+
+.toast i, .toast svg{
+    color:white;
+    background-color: green;
+    padding: 12px 12px;
+    border-radius: 100px;
+}
+
+.error svg{
+    color:white;
+    background-color: red;
+    padding: 12px 12px;
+    border-radius: 100px;
+}
+
+.invalid svg{
+    color:white;
+    background-color: orange;
+    padding: 12px 12px;
+    border-radius: 100px;
+}
+
+.toast::after{
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: green;
+    animation: anime 6s linear forwards;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    
+}
+
+.error::after{
+    background-color: red;
+}
+
+.invalid::after{
+    background-color: orange;
+}
+
+@keyframes anime {
+    100%{
+        width: 0;
+    }
+}
